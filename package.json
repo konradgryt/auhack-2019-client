@@ -27,6 +27,7 @@
     "react-countdown-clock-fork": "^1.10.1",
     "react-dom": "^16.8.6",
     "react-svg-timer": "^2.0.0",
+    "react-switch": "^4.1.0",
     "react-websocket": "^2.0.1"
   }
 }

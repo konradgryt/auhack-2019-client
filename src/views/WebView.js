@@ -1,13 +1,16 @@
 import React, { Component} from 'react';
+import PersonaToggle from '../components/PersonaToggle.js';
+import Text from '../components/Text.js';
+import DashboardControl from "../components/DashboardControl.js"
 import PoweredBy from "./../components/PoweredBy.js";
-import TypePersonaContainer from "./../components/TypePersonaContainer.js";
 
 class WebView extends React.Component {
 
     render() {
         return(
-          <div className="App">
-            <TypePersonaContainer />
+          <div className="web-app">
+        
+            <DashboardControl />
             <PoweredBy companyName="Zitcom" />
           </div>
         );

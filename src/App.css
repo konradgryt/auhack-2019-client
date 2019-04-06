@@ -1,5 +1,5 @@
 body {
-  margin: 0
+  margin: 0;
 }
 
 .pi-App {
@@ -101,6 +101,27 @@ body {
   font-weight: bold;
   font-size: 32px;
   text-align: center
+}
+
+.web-app {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-container {
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.toggle-name {
+  font-variant: small-caps;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 .footer{
