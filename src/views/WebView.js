@@ -4,11 +4,12 @@ import Text from '../components/Text.js';
 import DashboardControl from "../components/DashboardControl.js"
 import PoweredBy from "./../components/PoweredBy.js";
 import { Api } from '../api.js';
+import Login from "../components/Login"
+import SideMenu from "./../components/SideMenu.js";
 
 const myApi = new Api({ url:'https://jsonplaceholder.typicode.com' })
 
 class WebView extends React.Component {
-
   componentDidMount() {
 
     // applying /todos to 'https://jsonplaceholder.typicode.com', results in 'https://jsonplaceholder.typicode.com/todos'
@@ -24,9 +25,11 @@ class WebView extends React.Component {
         return(
           <div className="web-app">
 
+            <Login />
+        
             <DashboardControl />
             <PoweredBy companyName="Zitcom" />
-
+            <SideMenu />
           </div>
         );
     }

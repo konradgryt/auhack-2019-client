@@ -23,8 +23,14 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-regular-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+<<<<<<< HEAD
+=======
+    "@material-ui/core": "^3.9.3",
+    "axios": "^0.18.0",
+>>>>>>> 2e1bc112dc93ac8151025cac47eb9fd2fb5a9927
     "i": "^0.3.6",
     "npm": "^6.9.0",
     "react": "^16.8.6",
