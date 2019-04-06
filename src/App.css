@@ -57,3 +57,44 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+.persona-container{
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.persona-line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.persona-avatar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.persona-avatar-image{
+  height: 30vw;
+  width: 30vw;
+  overflow: hidden;
+}
+
+.persona-avatar-image img{
+  width: 100%
+}
+
+.persona-container p.heading{
+  font-weight: bold;
+  font-size: 32px
+}
+
+.footer{
+  position: fixed;
+  
+}
