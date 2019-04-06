@@ -5,7 +5,7 @@ body {
 .pi-App {
   padding: 1rem;
   font-family: Arial, Helvetica, sans-serif;
-  background: whitesmoke;
+  background: salmon;
   position: absolute;
   top: 0;
   left: 0;
@@ -27,11 +27,13 @@ body {
 }
 
 .pi--user-picture{
-  height: 250px;
-  width: 250px;
+  height: 225px;
+  width: 225px;
   border-radius: 100%;
   overflow: hidden;
   box-shadow: 0px 0px 50px rgba(0,0,0,0.2);
+  position: absolute;
+  margin-top:50px
 }
 
 .pi--user-picture img{
@@ -43,4 +45,13 @@ body {
   flex-direction: column;
   margin-top: 100px;
   align-items: center;
+}
+
+.pi--progressbar{
+  width: 325px;
+  height: 325px
+}
+
+.CircularProgressbar-trail{
+  background: red
 }
