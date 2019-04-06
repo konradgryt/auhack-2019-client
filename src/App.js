@@ -1,7 +1,7 @@
 import React, { Component} from "react";
 import "./App.css";
+import "./components/UserImage.js";
 import Websocket from 'react-websocket';
-//import "./App.css";
 
 var OSName="Unknown OS";
 if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
@@ -29,9 +29,7 @@ class App extends Component {
                   <p>Some app name</p>
                 </div>
                 <div className="person">
-                  <div className="userPicture">
-                    <img src="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
-                  </div>
+                  <UserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
                   <h1> Søren Lorentzen </h1>
                 </div>
 
