@@ -8,6 +8,17 @@ import SideMenu from "./../components/SideMenu.js";
 
 class WebView extends React.Component {
 
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/todos/1',  {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+          "Content-Type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+  }
+
     render() {
         return(
           <div className="web-app">
