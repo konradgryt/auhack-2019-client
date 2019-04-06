@@ -13,33 +13,36 @@ class PiView extends React.Component {
       <div className="pi-App">
         {/* <Websocket url='wss://echo.websocket.org/' onMessage={this.handleMessage} onOpen={this.testConnection}/> */}
         <PiHeader />
-        <div className="pi--person">
+        <div className="pi--main">
+          <CircularProgressbar
+            percentage={80}
+            className="pi--progressbar"
+            strokeWidth={10}
+            backgroundPadding={3}
+            background="true"
+            styles={{
+              path: {
+                // Path color
+                stroke: `rgba(255,255,255,0.4)`,
+                // Customize transition animation
+                transition: 'stroke-dashoffset 0.5s ease 0s',
+              },
+              trail: {
+                // Trail color
+                stroke: 'transparent',
+              },
+              background: {
+                // Trail color
+                fill: 'rgba(255,255,255,0.2)',
+              },
 
-        <CircularProgressbar
-          percentage={80}
-          className="pi--progressbar"
-          strokeWidth={10}
-          backgroundPadding={3}
-          background="true"
-          styles={{
-            path: {
-              // Path color
-              stroke: `rgba(255,255,255,0.4)`,
-              // Customize transition animation
-              transition: 'stroke-dashoffset 0.5s ease 0s',
-            },
-            trail: {
-              // Trail color
-              stroke: 'transparent',
-            },
-            background: {
-              // Trail color
-              fill: 'rgba(255,255,255,0.2)',
-            },
-          }}
-        />
-          <PiUserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
-          <PiUserName name="Søren Lorentzen" />
+
+            }}
+          />
+          <div className="pi--person">
+            <PiUserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
+            <PiUserName name="Søren Lorentzen" />
+          </div>
         </div>
       </div>
     );

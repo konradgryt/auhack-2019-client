@@ -9,7 +9,7 @@ class App extends Component {
     }
     
     render() {
-      //navigator.userAgent === "TODO add raspberry pi user agent"
+    //navigator.userAgent === "TODO add raspberry pi user agent"
       if (true) {
         return (
           <PiView />
@@ -20,7 +20,7 @@ class App extends Component {
           <WebView />
         )
       }
-    }
+  }
 }
 
 export default App;
