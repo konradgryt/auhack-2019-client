@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import './App.css';
 import PiView from './views/PiView';
 import WebView from './views/WebView';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class App extends Component {
     render() {
