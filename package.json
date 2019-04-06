@@ -22,8 +22,16 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
-    "material-design-icons": "^3.0.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-regular-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@material-ui/core": "^3.9.3",
+    "axios": "^0.18.0",
+    "i": "^0.3.6",
+    "npm": "^6.9.0",
     "react": "^16.8.6",
+    "react-burger-menu": "^2.6.8",
     "react-circular-progressbar": "^1.0.0",
     "react-countdown-clock-fork": "^1.10.1",
     "react-dom": "^16.8.6",
