@@ -103,18 +103,8 @@ body {
   text-align: center
 }
 
-.web-app {
-  padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-}
-
 .toggle-container {
   padding: 15px;
-  margin-left: auto;
-  margin-right: auto;
   
 }
 
@@ -122,6 +112,32 @@ body {
   font-variant: small-caps;
   padding: 20px;
   margin: 0 auto;
+}
+
+.login-form {
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+input {
+  width: 80%;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-image {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 25%; 
 }
 
 .footer{
