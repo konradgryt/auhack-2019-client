@@ -4,7 +4,7 @@ class PoweredBy extends React.Component {
   render (){
     return(
       <div className="footer">
-        <p> Powered by {this.props.name} </p>
+        <p> Powered by {this.props.companyName} </p>
       </div>
     )
   }
