@@ -12,7 +12,7 @@ class App extends Component {
     
     constructor(props) {
         super(props);
-        console.log(OSName)
+
     }
 
     testConnection() {
@@ -20,13 +20,22 @@ class App extends Component {
     }
 
     render() {
-
-    return(
-        <div className="App">
-        <h1> Hello, World! </h1>
-        <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection}/>
-        </div>
-    );
+        if (OSName="UNIX") {
+            return(
+                <div className="App">
+                <h1> Raspberry pi part</h1>
+                <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection}/>
+                </div>
+            );
+        }
+        else {
+            return(
+                <div className="App">
+                <h1> Web part</h1>
+                <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection}/>
+                </div>
+            );
+        }
   }
 }
 
