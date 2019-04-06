@@ -2,17 +2,18 @@ import React, { Component} from 'react';
 import PiUserImage from '../components/PiUserImage.js';
 import PiUserName from '../components/PiUserName.js';
 import PiHeader from '../components/PiHeader.js';
+import GradientBackground from '../components/GradientBackground.js';
 import Websocket from 'react-websocket';
 import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-class PiView extends React.Component { 
+class PiView extends React.Component {
 
   constructor(props) {
       super(props);
-      this.state = {percentage: 0, 
+      this.state = {percentage: 0,
                     speed: 0.0};
-      this.startCounter = this.startCounter.bind(this); 
+      this.startCounter = this.startCounter.bind(this);
       this.testConnection = this.testConnection.bind(this);
   }
 
@@ -77,6 +78,11 @@ class PiView extends React.Component {
             <PiUserName name="Søren Lorentzen" />
           </div>
         </div>
+        <div className="gradients">
+          <GradientBackground className="from" percentage={this.state.percentage}/>
+          <GradientBackground className="to" />
+        </div>
+
       </div>
     );
   }

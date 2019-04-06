@@ -29,6 +29,7 @@
     "i": "^0.3.6",
     "npm": "^6.9.0",
     "react": "^16.8.6",
+    "react-burger-menu": "^2.6.8",
     "react-circular-progressbar": "^1.0.0",
     "react-countdown-clock-fork": "^1.10.1",
     "react-dom": "^16.8.6",
