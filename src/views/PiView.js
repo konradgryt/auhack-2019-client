@@ -40,7 +40,7 @@ class PiView extends React.Component {
   render() {
     return(
       <div className="pi-App">
-        {/* <Websocket url='wss://echo.websocket.org/' onMessage={this.handleMessage} onOpen={this.testConnection}/> */}
+        <Websocket url='wss://echo.websocket.org/' onMessage={this.handleMessage} onOpen={this.testConnection}/>
         <PiHeader />
         <div className="pi--main">
           <CircularProgressbar
