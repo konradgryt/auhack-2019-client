@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 import "./App.css";
-import "./components/UserImage.js";
+import "./components/UserImage";
 import Websocket from 'react-websocket';
 
 var OSName="Unknown OS";
@@ -13,7 +13,6 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-
     }
 
     testConnection() {
@@ -32,11 +31,10 @@ class App extends Component {
                   <UserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
                   <h1> Søren Lorentzen </h1>
                 </div>
-
               </div>
             );
         }
-        else {
+        else if (OSName="MacOS") {
             return(
                 <div className="App">
                 <h1> Web part</h1>
