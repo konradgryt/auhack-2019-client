@@ -7,25 +7,16 @@ import PoweredBy from "./../components/PoweredBy.js";
 
 class WebView extends React.Component {
 
-  // //default state
-  // state = {
-  //   currentData: 'initial data'
-  // };
-
-  // componentDidMount() {
-
-  //   //https://github.com/axios/axios
-
-  //   axios
-  //     .get("URL HERE") //TODO add url
-  //     .then(response => {
-
-  //       const receivedData = response //TODO conver 
-  
-  //       this.setState(receivedData);
-  //     })
-  //     .catch(error => console.log(error));
-  // }
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/todos/1',  {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+          "Content-Type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+  }
 
     render() {
         return(
