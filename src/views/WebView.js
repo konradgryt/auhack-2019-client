@@ -3,6 +3,7 @@ import PersonaToggle from '../components/PersonaToggle.js';
 import Text from '../components/Text.js';
 import DashboardControl from "../components/DashboardControl.js"
 import PoweredBy from "./../components/PoweredBy.js";
+import SideMenu from "./../components/SideMenu.js";
 
 
 class WebView extends React.Component {
@@ -13,6 +14,7 @@ class WebView extends React.Component {
 
             <DashboardControl />
             <PoweredBy companyName="Zitcom" />
+            <SideMenu />
 
           </div>
         );
