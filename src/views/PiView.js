@@ -17,7 +17,7 @@ class PiView extends React.Component {
   }
 
   testConnection() {
-    this.startCounter(20);
+    this.startCounter(300);
   }
 
   tick() {
