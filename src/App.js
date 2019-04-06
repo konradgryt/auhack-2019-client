@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 import "./App.css";
-import UserImage from "./components/UserImage";
+import PiUserImage from "./components/PiUserImage";
 import Websocket from 'react-websocket';
 
 var OSName="Unknown OS";
@@ -22,13 +22,13 @@ class App extends Component {
     render() {
         if (OSName="UNIX") {
             return(
-              <div className="App">
-                <div className="header">
-                  <img src="https://www.zitcom.dk/img/logo/zg-logo.svg" className="logo"/>
+              <div className="pi-App">
+                <div className="pi--header">
+                  <img src="https://www.zitcom.dk/img/logo/zg-logo.svg" className="pi--logo"/>
                   <p>Some app name</p>
                 </div>
-                <div className="person">
-                  <UserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
+                <div className="pi--person">
+                  <PiUserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
                   <h1> Søren Lorentzen </h1>
                 </div>
               </div>

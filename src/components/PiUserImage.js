@@ -1,13 +1,13 @@
 import React, { Component} from "react";
 
-class UserImage extends React.Component {
+class PiUserImage extends React.Component {
   render (){
     return(
-      <div className="userPicture">
+      <div className="pi--user-picture">
         <img src={this.props.source} />
       </div>
     )
   }
 }
 
-export default UserImage;
+export default PiUserImage;
