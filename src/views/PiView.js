@@ -8,6 +8,35 @@ import 'react-circular-progressbar/dist/styles.css';
 
 class PiView extends React.Component { 
 
+  constructor(props) {
+      super(props);
+      this.state = {percentage: 0, 
+                    speed: 0.0};
+      this.startCounter = this.startCounter.bind(this); 
+      // this.testConnection = this.testConnection.bind(this);
+  }
+
+  tick() {
+    if (this.state.percentage <= 0) {
+      clearInterval(this.timerID);
+      return;
+    }
+    this.setState(function(state) {
+      return {
+        percentage: state.percentage - state.speed
+      };
+    });
+  }
+
+  // duration is the duration in seconds of the new deep work session
+  startCounter(duration) {
+    this.setState({
+      percentage: 100,
+      speed: 10 / duration
+    });
+    this.timerID = setInterval(() => this.tick(), 100);
+  }
+
   render() {
     return(
       <div className="pi-App">
@@ -15,7 +44,7 @@ class PiView extends React.Component {
         <PiHeader />
         <div className="pi--main">
           <CircularProgressbar
-            percentage={80}
+            percentage={this.state.percentage}
             className="pi--progressbar"
             strokeWidth={10}
             backgroundPadding={3}
