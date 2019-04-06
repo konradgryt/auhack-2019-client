@@ -58,6 +58,14 @@ body {
   align-items: center;
 }
 
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh
+}
+
 .persona-container{
   display: flex;
   flex-direction: column;
@@ -89,9 +97,10 @@ body {
   width: 100%
 }
 
-.persona-container p.heading{
+.persona-container .heading{
   font-weight: bold;
-  font-size: 32px
+  font-size: 32px;
+  text-align: center
 }
 
 .web-app {
@@ -117,5 +126,6 @@ body {
 
 .footer{
   position: fixed;
-  
+  bottom: 10px;
+  left: 20px
 }
