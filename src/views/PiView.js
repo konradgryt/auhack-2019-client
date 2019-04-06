@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import PiUserImage from '../components/PiUserImage.js';
 import PiUserName from '../components/PiUserName.js';
 import PiHeader from '../components/PiHeader.js';
-// import Websocket from 'react-websocket';
+import Websocket from 'react-websocket';
 import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -13,7 +13,11 @@ class PiView extends React.Component {
       this.state = {percentage: 0, 
                     speed: 0.0};
       this.startCounter = this.startCounter.bind(this); 
-      // this.testConnection = this.testConnection.bind(this);
+      this.testConnection = this.testConnection.bind(this);
+  }
+
+  testConnection() {
+    this.startCounter(20);
   }
 
   tick() {
@@ -40,7 +44,7 @@ class PiView extends React.Component {
   render() {
     return(
       <div className="pi-App">
-        <Websocket url='wss://echo.websocket.org/' onMessage={this.handleMessage} onOpen={this.testConnection}/>
+        <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection.bind(this)}/>
         <PiHeader />
         <div className="pi--main">
           <CircularProgressbar
