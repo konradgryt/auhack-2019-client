@@ -12,7 +12,7 @@ class App extends Component {
 
     render() {
     //navigator.userAgent === "TODO add raspberry pi user agent"
-      if (true) {
+      if (false) {
         return (
           <PiView />
         )
