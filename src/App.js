@@ -20,27 +20,27 @@ class App extends Component {
     }
 
     render() {
-        if (OSName="UNIX") {
-            return(
-              <div className="pi-App">
-                <div className="pi--header">
-                  <img src="https://www.zitcom.dk/img/logo/zg-logo.svg" className="pi--logo"/>
-                  <p>Some app name</p>
-                </div>
-                <div className="pi--person">
-                  <PiUserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
-                  <h1> Søren Lorentzen </h1>
-                </div>
-              </div>
-            );
+        if (OSName="MacOS") {
+          return(
+            <div className="App">
+            <h1> Web part</h1>
+            <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection}/>
+            </div>
+        );     
         }
-        else if (OSName="MacOS") {
-            return(
-                <div className="App">
-                <h1> Web part</h1>
-                <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection}/>
-                </div>
-            );
+        else if (OSName="UNIX") {
+          return(
+            <div className="pi-App">
+              <div className="pi--header">
+                <img src="https://www.zitcom.dk/img/logo/zg-logo.svg" className="pi--logo"/>
+                <p>Some app name</p>
+              </div>
+              <div className="pi--person">
+                <PiUserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
+                <h1> Søren Lorentzen </h1>
+              </div>
+            </div>
+          );
         }
   }
 }
