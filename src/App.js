@@ -26,7 +26,14 @@ class App extends Component {
     }
 
     render() {
-        if (OSName="UNIX") {
+        if (OSName="MacOS") {
+          return(
+            <div className="App">
+            <h1> Web part</h1>
+            <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection}/>
+            </div>
+        );
+        } else if (OSName="UNIX") {
             return(
               <div className="pi-App">
                 <PiHeader />
@@ -63,14 +70,6 @@ class App extends Component {
                   <PiUserName name="Søren Lorentzen" />
                 </div>
               </div>
-            );
-        }
-        else if (OSName="MacOS") {
-            return(
-                <div className="App">
-                <h1> Web part</h1>
-                <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection}/>
-                </div>
             );
         }
   }
