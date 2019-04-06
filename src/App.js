@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 import "./App.css";
-import "./components/UserImage";
+import UserImage from "./components/UserImage";
 import Websocket from 'react-websocket';
 
 var OSName="Unknown OS";
