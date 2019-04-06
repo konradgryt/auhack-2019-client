@@ -10,16 +10,11 @@ import SideMenu from "./../components/SideMenu.js";
 const myApi = new Api({ url:'https://jsonplaceholder.typicode.com' })
 
 class WebView extends React.Component {
-  componentDidMount() {
-
-    // applying /todos to 'https://jsonplaceholder.typicode.com', results in 'https://jsonplaceholder.typicode.com/todos'
-    myApi.createEntity({ name: 'todos' });
-
-    // requesting 'https://jsonplaceholder.typicode.com/todos/1'
-    myApi.endpoints.todos.get(1).then(({data}) => console.log(data))
-    
-    //myApi.endpoints.todos.getAll().then(({ data }) => console.log(data))
-  }
+  
+    componentDidMount() {
+      myApi.createEntity({ name: 'todos' })
+      myApi.endpoints.todos.get(1).then(({data}) => console.log(data))
+    }
 
     render() {
         return(
