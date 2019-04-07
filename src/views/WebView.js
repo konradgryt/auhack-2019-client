@@ -3,6 +3,7 @@ import PersonaToggle from '../components/PersonaToggle.js';
 import Text from '../components/Text.js';
 import DashboardControl from "../components/DashboardControl.js"
 import DashboardRythmic from "../components/DashboardRythmic.js"
+import DashboardButtons from "../components/DashboardButtons.js"
 import PoweredBy from "./../components/PoweredBy.js";
 import * as moment from 'moment';
 import { Api } from '../api.js';
@@ -10,9 +11,10 @@ import Login from "../components/Login"
 import SideMenu from "./../components/SideMenu.js";
 import LoginForm from "./../components/LoginForm.js";
 
-const myApi = new Api({ url:'https://jsonplaceholder.typicode.com' })
+//const myApi = new Api({ url:'https://jsonplaceholder.typicode.com' })
 
 class WebView extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = { time: moment().add(10,'seconds'), // change this to the default start time
@@ -24,19 +26,12 @@ class WebView extends React.Component {
     this.flip = this.flip.bind(this);
   }
 
-  componentDidMount() {
-
-    // applying /todos to 'https://jsonplaceholder.typicode.com', results in 'https://jsonplaceholder.typicode.com/todos'
-    myApi.createEntity({ name: 'todos' });
-
-    // requesting 'https://jsonplaceholder.typicode.com/todos/1'
-    myApi.endpoints.todos.get(1).then(({data}) => console.log(data))
-    
-    //myApi.endpoints.todos.getAll().then(({ data }) => console.log(data))
-
-
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
+ 
+    componentDidMount() {
+      fetch('http://172.20.10.9:8000', { 'contentType': 'application/json'}).then((response) => {
+        console.log(response);
+      })
+    }
 
   tick() {
     if (moment().isAfter(this.state.time)) {

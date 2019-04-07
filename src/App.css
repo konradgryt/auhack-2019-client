@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #6FC4BD;
 }
 
 /*** MENU ***/
@@ -187,26 +188,52 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding: 15px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .toggle-name {
-  font-variant: small-caps;
   padding: 20px;
   margin: 0 auto;
 }
 
 .login-form {
   padding: 20px;
-  font-family: Arial, Helvetica, sans-serif; 
+  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
 
+
 input {
-  width: 80%;
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #6FC4BD;
+  border-bottom: 1px solid white;
+
+}
+
+input[type=submit] {
+  border-radius: 25px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  clear: none;
+}
+
+
+.tagline {
+  position: absolute;
+  top: 33%;
+  left: 42%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 22px;
+  color: white;
+  text-align:
 }
 
 .login-form form {
@@ -216,10 +243,18 @@ input {
 
 .login-image {
   position: absolute;
+  top: 19%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 15%;
+}
+
+.logo-image {
+  position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  width: 25%; 
+  width: 320px;
 }
 
 .footer{
@@ -244,4 +279,66 @@ input {
 .gradient-background.to{
   background: linear-gradient(45deg, #6C864D, #596C44);
   z-index: -2
+}
+
+.sidebar-flex{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right:0px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 0.2s ease;
+  z-index: 10
+}
+
+.sidebar-flex.swipe{
+  right: 340px
+}
+
+.sidebar-button{
+  width: 80px;
+  height: 80px;
+  background: rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  color: rgba(0,0,0,0.8);
+  transition: background 0.2s ease;
+}
+
+.sidebar-button:hover{
+  background: rgba(0,0,0,0.1);}
+
+.sidebar--info-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: flex-end;
+  transition: transform 0.2s;
+  z-index: -1;
+  opacity: 0
+}
+
+.sidebar--info-container.swipe{
+  opacity: 1;
+  z-index: 0
+}
+
+.sidebar--info-inside{
+  background: rgba(0,0,0,0.7);
+  width: 300px;
+  padding: 20px;
+  color: white;
+  transform: translateX(100%);
+
+}
+
+.sidebar--info-container.swipe .sidebar--info-inside{
+  transform: translateX(0%);
 }

@@ -19,8 +19,6 @@ export class Api {
 
     const resourceURL = `${this.url}/${entity}`
 
-    endpoints.getAll = ({ query={}}, config={} ) => axios.get(resourceURL, Object.assign({ params: { query }, config }))
-
     endpoints.get = (id, config={}) =>  axios.get(`${resourceURL}/${id}`, config)
 
     endpoints.create = (toCreate, config={}) =>  axios.post(resourceURL, toCreate, config)
@@ -34,5 +32,4 @@ export class Api {
     return endpoints
 
   }
-
 }

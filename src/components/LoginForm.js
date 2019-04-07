@@ -1,4 +1,5 @@
 import React, { Component} from "react";
+import Icon from '@material-ui/core/Icon';
 
 
 class LoginForm extends React.Component {
@@ -36,15 +37,16 @@ class LoginForm extends React.Component {
 
         <div className="login-form">
           <form onSubmit={this.handleSubmit}>
-            <label>
-              Username:
-              <input type="text" placeholder="enter email here..." value={this.state.value} onChange={this.handleChangeUsr} />
-            </label>
-            <label>
-              Password:
-              <input type="password" placeholder="enter password here..." value={this.state.value} onChange={this.handleChangePwd} />
-            </label>
-            <input type="submit" value="submit" />
+            <div>
+            <Icon>person</Icon>
+            <input type="text" placeholder="email" value={this.state.value} onChange={this.handleChangeUsr} />
+            </div>
+            <div>
+            <Icon>lock</Icon>
+            <input type="password" placeholder="password" value={this.state.value} onChange={this.handleChangePwd} />
+            <Icon>visibility_off</Icon>
+            </div>
+            <input className="submit-button" type="submit" value="submit" />
         </form>
         
         </div>
