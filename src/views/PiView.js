@@ -89,8 +89,8 @@ class PiView extends React.Component {
             }}
           />
           <div className="pi--person">
-            <PiUserImage source="https://www.scannet.dk/img/pictures/employees/soren-lorentzen-lg@2x.jpg" />
-            <PiUserName name="Søren Lorentzen" />
+            <PiUserImage source="https://media.licdn.com/dms/image/C5603AQFz23khlHIZGA/profile-displayphoto-shrink_200_200/0?e=1560384000&v=beta&t=MNNB_XVkNg0k7g3c18SqjNw2VPUOTDFEaJsGjfj9u1Q" />
+            <PiUserName name="Nathalia Novais" />
           </div>
         </div>
         <div className="gradients">
