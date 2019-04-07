@@ -24,12 +24,12 @@ class WebView extends React.Component {
 
     this.testTime = this.testTime.bind(this);
     this.updateView = this.updateView.bind(this);
-    this.flip = this.flip.bind(this);
+    // this.flip = this.flip.bind(this);
     this.setToken = this.setToken.bind(this);
   }
 
 
-    componentDidMount() {
+  componentDidMount() {
       fetch('http://127.0.0.1:8000', { 'contentType': 'application/json'}).then((response) => {
         console.log(response);
       })
@@ -45,13 +45,7 @@ class WebView extends React.Component {
     }
   }
 
-            <DashboardControl />
-            <PoweredBy companyName="Zitcom" />
-            <SideMenu />
-          </div>
-        );
-    }
-  }
+
 
   componentWillUnmount() {
     clearInterval(this.interval);
