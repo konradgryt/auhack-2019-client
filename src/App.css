@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #6FC4BD;
 }
 
 /*** MENU ***/
@@ -187,7 +188,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding: 15px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .toggle-name {
@@ -205,8 +205,36 @@ Note: Beware of modifying this element as it can break the animations - you shou
   transform: translateX(-50%) translateY(-50%);
 }
 
+
 input {
-  width: 80%;
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #6FC4BD;
+  border-bottom: 1px solid white;
+  
+}
+
+input[type=submit] {
+  border-radius: 25px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  clear: none;
+}
+
+
+.tagline {
+  position: absolute;
+  top: 33%;
+  left: 42%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 22px;
+  color: white;
+  text-align: 
 }
 
 .login-form form {
@@ -216,10 +244,18 @@ input {
 
 .login-image {
   position: absolute;
+  top: 19%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 15%; 
+}
+
+.logo-image {
+  position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  width: 25%; 
+  width: 320px; 
 }
 
 .footer{
