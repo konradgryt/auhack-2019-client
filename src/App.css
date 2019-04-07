@@ -186,8 +186,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .toggle-container {
   padding: 15px;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .toggle-name {
@@ -255,6 +257,13 @@ input[type=submit] {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 320px;
+}
+
+.dashboard-bimodal {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .footer{
