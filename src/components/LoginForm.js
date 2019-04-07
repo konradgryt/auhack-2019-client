@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import Icon from '@material-ui/core/Icon';
+import axios from "axios";
 
 
 class LoginForm extends React.Component {
@@ -26,8 +27,40 @@ class LoginForm extends React.Component {
   handleSubmit(event) {
     alert("A name was submitted: " + this.state.username + this.state.password);
     event.preventDefault();
+
+    fetch('http://127.0.0.1:8000', { 'contentType': 'application/json'}).then((response) => {
+        console.log(response);
+      })
+
+      var payload = {
+        username: this.state.username,
+        password: this.state.password
+       };
+
+       axios.post("http://127.0.0.1:8000/api-token-auth/", payload)
+        .then((res) => { this.props.setToken(res.data.token); 
+                        this.props.nextView('DASHBOARDCONTROL')}) 
+    
+      //   var data = new FormData();
+      //   data.append( "json", JSON.stringify( payload ) );
+        
+      //   console.log(data)
+      //   fetch("http://127.0.0.1:8000/api-token-auth/",
+      //   {
+      //       contentType: 'application/json',
+      //       method: "POST",
+      //       body: JSON.stringify(payload)
+      //   })
+      //   .then(function(res){ 
+      //     console.log("1")
+      //     console.log(res)
+      //     return res.json(); })
+      //   .then(function(data){ console.log( JSON.stringify( data ) ) })
+
     // send login request to server
     // on response: if ack change view, else stay
+    
+    
   }
   
   render (){

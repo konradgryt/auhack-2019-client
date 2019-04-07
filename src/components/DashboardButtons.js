@@ -5,6 +5,18 @@ var ImageMapper = require('react-image-mapper');
 
 
 class DashboardButtons extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this, 'Duration');
+  }
+
+  handleClick(param, duration) {
+    console.log(duration);
+    // TODO: send request to start deep work
+    // TODO: shift to page with timer
+  }
+
   render (){
 
 

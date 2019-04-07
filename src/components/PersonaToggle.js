@@ -4,14 +4,20 @@ import DashboardButtons from "./DashboardButtons.js"
 
 
 class PersonaToggle extends Component {
-  constructor() {
-    super();
-    this.state = { checked: false };
+  constructor(props) {
+    super(props);
+    this.state = { checked: props.checked };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(checked) {
     this.setState({ checked });
+
+    // if (checked) {
+    //   this.props.nextView('DASHBOARDCONTROL');
+    // } else {
+    //   this.props.nextView('DASHBOARDRYTHMIC');
+    // }
   }
 
   render() {
