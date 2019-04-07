@@ -202,7 +202,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
@@ -215,7 +215,7 @@ input {
   box-sizing: border-box;
   border: none;
   background-color: #6FC4BD;
-  border-bottom: 1px solid white;
+  outline: none
 
 }
 
@@ -427,4 +427,12 @@ input[type=submit] {
 
 .toggle-container label .toggle-name{
   text-align: left;
+}
+
+.form-line{
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1em
 }

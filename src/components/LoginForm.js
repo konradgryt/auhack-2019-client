@@ -15,15 +15,15 @@ class LoginForm extends React.Component {
     this.handleChangePwd = this.handleChangePwd.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
- 
+
   handleChangeUsr(event) {
     this.setState({username: event.target.value});
   }
- 
+
   handleChangePwd(event) {
     this.setState({password: event.target.value});
   }
- 
+
   handleSubmit(event) {
     alert("A name was submitted: " + this.state.username + this.state.password);
     event.preventDefault();
@@ -38,12 +38,12 @@ class LoginForm extends React.Component {
        };
 
        axios.post("http://127.0.0.1:8000/api-token-auth/", payload)
-        .then((res) => { this.props.setToken(res.data.token); 
-                        this.props.nextView('DASHBOARDCONTROL')}) 
-    
+        .then((res) => { this.props.setToken(res.data.token);
+                        this.props.nextView('DASHBOARDCONTROL')})
+
       //   var data = new FormData();
       //   data.append( "json", JSON.stringify( payload ) );
-        
+
       //   console.log(data)
       //   fetch("http://127.0.0.1:8000/api-token-auth/",
       //   {
@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
       //       method: "POST",
       //       body: JSON.stringify(payload)
       //   })
-      //   .then(function(res){ 
+      //   .then(function(res){
       //     console.log("1")
       //     console.log(res)
       //     return res.json(); })
@@ -59,27 +59,26 @@ class LoginForm extends React.Component {
 
     // send login request to server
     // on response: if ack change view, else stay
-    
-    
+
+
   }
-  
+
   render (){
     return(
 
         <div className="login-form">
           <form onSubmit={this.handleSubmit}>
-            <div>
-            <Icon>person</Icon>
+            <div className="form-line">
+            <Icon>person_outlined</Icon>
             <input type="text" placeholder="email" value={this.state.value} onChange={this.handleChangeUsr} />
             </div>
-            <div>
-            <Icon>lock</Icon>
+            <div className="form-line">
+            <Icon>lock_outlined</Icon>
             <input type="password" placeholder="password" value={this.state.value} onChange={this.handleChangePwd} />
-            <Icon>visibility_off</Icon>
             </div>
             <input className="submit-button" type="submit" value="submit" />
         </form>
-        
+
         </div>
     )
   }

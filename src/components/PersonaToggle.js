@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Switch from "react-switch";
 import DashboardButtons from "./DashboardButtons.js"
+import DeepDone from "./DeepDone.js"
 
 
 class PersonaToggle extends Component {
@@ -37,7 +38,7 @@ class PersonaToggle extends Component {
 
               :
 
-              <div></div>
+              <DeepDone />
             }
             </div>
     );
