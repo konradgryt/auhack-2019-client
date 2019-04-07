@@ -27,6 +27,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "i": "^0.3.6",
+    "material-design-icons": "^3.0.1",
     "npm": "^6.9.0",
     "react": "^16.8.6",
     "react-burger-menu": "^2.6.8",
