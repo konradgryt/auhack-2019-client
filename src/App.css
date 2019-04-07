@@ -191,7 +191,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .toggle-name {
-  font-variant: small-caps;
   padding: 20px;
   margin: 0 auto;
 }
@@ -280,4 +279,65 @@ input[type=submit] {
 .gradient-background.to{
   background: linear-gradient(45deg, #6C864D, #596C44);
   z-index: -2
+}
+
+.sidebar-flex{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right:0px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 0.2s ease;
+  z-index: 10
+}
+
+.sidebar-flex.swipe{
+  right: 340px
+}
+
+.sidebar-button{
+  width: 80px;
+  height: 80px;
+  background: rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  color: rgba(0,0,0,0.8);
+  transition: background 0.2s ease;
+}
+
+.sidebar-button:hover{
+  background: rgba(0,0,0,0.1);}
+
+.sidebar--info-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: flex-end;
+  transition: transform 0.2s;
+  z-index: 0;
+  opacity: 0
+}
+
+.sidebar--info-container.swipe{
+  opacity: 1
+}
+
+.sidebar--info-inside{
+  background: rgba(0,0,0,0.7);
+  width: 300px;
+  padding: 20px;
+  color: white;
+  transform: translateX(100%);
+
+}
+
+.sidebar--info-container.swipe .sidebar--info-inside{
+  transform: translateX(0%);
 }
