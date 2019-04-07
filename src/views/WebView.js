@@ -2,18 +2,20 @@ import React, { Component} from 'react';
 import PersonaToggle from '../components/PersonaToggle.js';
 import Text from '../components/Text.js';
 import DashboardControl from "../components/DashboardControl.js"
-import DashboardRythmic from "../components/DashboardRythmic.js"
-import DashboardButtons from "../components/DashboardButtons.js"
 import PoweredBy from "./../components/PoweredBy.js";
-import * as moment from 'moment';
 import { Api } from '../api.js';
 import Login from "../components/Login"
 import SideMenu from "./../components/SideMenu.js";
-import LoginForm from "./../components/LoginForm.js";
-
-//const myApi = new Api({ url:'https://jsonplaceholder.typicode.com' })
+import DeepDone from "../components/DeepDone"
+import DeepStart from "../components/DeepStart"
+import moment from "moment"
 
 class WebView extends React.Component {
+
+  componentDidMount() {
+    myApi.createEntity({ name: 'todos' })
+    myApi.endpoints.todos.get(1).then(({data}) => console.log(data))
+  }
 
   constructor(props) {
     super(props);
@@ -35,16 +37,15 @@ class WebView extends React.Component {
       })
     }
 
-  tick() {
-    if (moment().isAfter(this.state.time)) {
-      clearInterval(this.timerID);
-      console.log("test");
-      // send request to start deep work
-      // notification
-      // change view
-    }
-  }
-
+  // tick() {
+  //   if (moment().isAfter(this.state.time)) {
+  //     clearInterval(this.timerID);
+  //     console.log("test");
+  //     // send request to start deep work
+  //     // notification
+  //     // change view
+  //   }
+  // }
 
 
   componentWillUnmount() {
@@ -80,6 +81,10 @@ class WebView extends React.Component {
                 ) : this.state.active === 'DASHBOARDRYTHMIC' ? (
                     <DashboardRythmic nextView={this.updateView} checked={this.checked} flip={this.flip} />
                 ) : null }
+
+                {/* <Login />  */}
+            {/* <DeepDone /> */}
+            {/* <DeepStart /> */}
 
         <PoweredBy companyName="Zitcom" />
         <SideMenu />
