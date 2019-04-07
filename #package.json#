@@ -1,11 +1,11 @@
-{
+t p{
   "name": "proj",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode development && webpack-dev-server --mode development"
+    "start": "webpack --mode development"
   },
   "author": "",
   "license": "ISC",
@@ -22,22 +22,8 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-regular-svg-icons": "^5.8.1",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "@material-ui/core": "^3.9.3",
-    "axios": "^0.18.0",
-    "i": "^0.3.6",
-    "material-design-icons": "^3.0.1",
-    "npm": "^6.9.0",
     "react": "^16.8.6",
-    "react-burger-menu": "^2.6.8",
-    "react-circular-progressbar": "^1.0.0",
-    "react-countdown-clock-fork": "^1.10.1",
     "react-dom": "^16.8.6",
-    "react-svg-timer": "^2.0.0",
-    "react-switch": "^4.1.0",
     "react-websocket": "^2.0.1"
   }
 }

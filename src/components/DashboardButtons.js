@@ -27,8 +27,7 @@ class DashboardButtons extends React.Component {
         <button className="time-button" onClick={(e) => this.handleClick(4500, e)}> 75 min </button>
 
         </div>
-        
-  )
+    )
   }
 }
 
