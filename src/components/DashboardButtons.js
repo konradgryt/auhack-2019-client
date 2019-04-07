@@ -1,18 +1,28 @@
 import React, { Component} from "react";
-import Text from "./Text.js"
+import Text from "./Text.js";
+import PersonaToggle from "./PersonaToggle.js";
+var ImageMapper = require('react-image-mapper');
+
 
 class DashboardButtons extends React.Component {
   render (){
+
+
     return(
 
         <div>
-        <Text className="heading" text="How much distraction free time do you need?" />
+        <div className="triangle-buttons">
+          <Text className="heading" text="How much distraction free time do you need?" />
+          <ImageMapper src={"https://i.ibb.co/18FJfdF/03-01-01-Dashboard-V1-Triangles.png"} map={ { name: "generated", areas: [
+            { "_id": "01", "shape": "poly", "coords": [11,76,114,103,156,5],"href": "#fifteen"},
+            { "_id": "02", "shape": "poly", "coords": [3,85,33,195,113,114],"href": "#twentyfive"},
+            { "_id": "03", "shape": "poly", "coords": [299,38,406,3,412,207],"href": "#fortyfive"},
+            { "_id": "04", "shape": "poly", "coords": [130,117,203,267,280,43],"href": "#seventyfive"},
+            { "_id": "05", "shape": "poly", "coords": [213,282,288,51,402,215],"href": "#ninety"}
+          ] }}
+          width={550} imgWidth={416.5}/>
+        </div>
 
-        <button className="time-button">45 min</button>
-        <button className="time-button"> 35 min </button>
-        <button className="time-button"> 60 min </button>
-        <button className="time-button"> 15 min </button>
-        <button className="time-button"> 75 min </button>
 
         </div>
     )

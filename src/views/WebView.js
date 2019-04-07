@@ -23,7 +23,7 @@ class WebView extends React.Component {
 
             {/* <Login /> */ }
 
-            <DashboardButtons />
+            <DashboardControl />
             <PoweredBy companyName="Zitcom" />
             <SideMenu />
           </div>
