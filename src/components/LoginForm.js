@@ -28,6 +28,8 @@ class LoginForm extends React.Component {
     event.preventDefault();
     // send login request to server
     // on response: if ack change view, else stay
+    
+    this.props.nextView('DASHBOARDCONTROL');
   }
   
   render (){

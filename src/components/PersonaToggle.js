@@ -2,14 +2,21 @@ import React, { Component } from "react";
 import Switch from "react-switch";
  
 class PersonaToggle extends Component {
-  constructor() {
-    super();
-    this.state = { checked: false };
+  constructor(props) {
+    super(props);
+    this.state = { checked: props.checked };
     this.handleChange = this.handleChange.bind(this);
   }
  
   handleChange(checked) {
     this.setState({ checked });
+    this.props.flip();
+
+    // if (!checked) {
+    //   this.props.nextView('DASHBOARDCONTROL'); 
+    // } else {
+    //   this.props.nextView('DASHBOARDRYTHMIC');
+    // }
   }
  
   render() {
