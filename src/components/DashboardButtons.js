@@ -15,7 +15,6 @@ class DashboardButtons extends React.Component {
         <button className="time-button"> 75 min </button>
 
         </div>
-        
     )
   }
 }
