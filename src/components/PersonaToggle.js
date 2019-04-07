@@ -7,7 +7,7 @@ import DeepDone from "./DeepDone.js"
 class PersonaToggle extends Component {
   constructor(props) {
     super(props);
-    this.state = { checked: props.checked };
+    this.state = { checked: false };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -32,14 +32,7 @@ class PersonaToggle extends Component {
       </label>
       </div>
       {
-              this.state.checked?
-
-              <DashboardButtons />
-
-              :
-
-              <DeepDone />
-            }
+      }
             </div>
     );
   }

@@ -10,7 +10,8 @@ class DashboardControl extends React.Component {
   render (){
     return(
         <div>
-        <PersonaToggle nextView={this.props.nextView} checked={this.props.checked} flip={this.props.flip}/>
+        {/* <PersonaToggle nextView={this.props.nextView}/> */}
+        <DashboardButtons token={this.props.token}/>
 
         </div>
     )

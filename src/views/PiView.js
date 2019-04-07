@@ -7,13 +7,15 @@ import Websocket from 'react-websocket';
 import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import axios from "axios";
+import moment from "moment";
 
 class PiView extends React.Component {
 
   constructor(props) {
       super(props);
       this.state = {percentage: 0,
-                    speed: 0.0};
+                    speed: 0.0, 
+                    currentId: 0};
       this.startCounter = this.startCounter.bind(this);
       this.testConnection = this.testConnection.bind(this);
   }
@@ -35,9 +37,31 @@ class PiView extends React.Component {
   }
 
   listentick() {
-    axios.get("http://127.0.0.1:8000/sessions/")
-        .then((res) => { this.props.setToken(res.data.token); 
-                        this.props.nextView('DASHBOARDCONTROL')}) 
+    axios.get("http://192.168.1.206:8000/sessions/")
+        .then((res) => { 
+          console.log(res.data[res.data.length - 1]); 
+          var date = res.data[res.data.length - 1];
+          // remember previous id
+          var prev = this.state.currentId;
+          // update current id
+          this.setState({
+            currentId: date.id
+          });
+
+          console.log(date.created)
+          var parsedTime = moment(date.created).local().format("HH:mm");
+          console.log(parsedTime)
+          if (!moment().isAfter(moment(date.created).local().add(date.duration,'seconds'))) {
+              if (this.state.currentId != prev) {
+                console.log("testtt");
+                this.startCounter(date.duration);
+              }
+              // send request to start deep work
+              // notification
+              // change view
+          }
+
+        }) 
   }
 
   // duration is the duration in seconds of the new deep work session
@@ -60,7 +84,7 @@ class PiView extends React.Component {
   render() {
     return(
       <div className="pi-App">
-        <Websocket url='wss://echo.websocket.org/' onOpen={this.testConnection.bind(this)}/>
+       
         <PiHeader />
         <div className="pi--main">
           <CircularProgressbar

@@ -2,6 +2,7 @@ import React, { Component} from "react";
 import Text from "./Text.js";
 import PersonaToggle from "./PersonaToggle.js";
 var ImageMapper = require('react-image-mapper');
+import axios from "axios"
 
 
 class DashboardButtons extends React.Component {
@@ -13,7 +14,18 @@ class DashboardButtons extends React.Component {
 
   handleClick(param, duration) {
     console.log(duration);
-    // TODO: send request to start deep work
+    // send request to start deep work
+    var data = {
+      duration: "60"
+    }
+    var headers = {
+      'Authorization': "Token " + this.props.token
+     };
+     console.log(headers);
+    axios.post("http://192.168.1.206:8000/sessions/", data, headers)
+        .then((res) => { 
+          console.log("ack")
+        })
     // TODO: shift to page with timer
   }
 
@@ -32,7 +44,7 @@ class DashboardButtons extends React.Component {
             { "_id": "04", "shape": "poly", "coords": [130,117,203,267,280,43],"href": "#seventyfive"},
             { "_id": "05", "shape": "poly", "coords": [213,282,288,51,402,215],"href": "#ninety"}
           ] }}
-          width={550} imgWidth={416.5}/>
+          width={550} imgWidth={416.5} onClick={this.handleClick}/>
         </div>
 
 

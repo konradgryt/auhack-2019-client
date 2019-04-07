@@ -21,7 +21,6 @@ class WebView extends React.Component {
     super(props);
     this.state = { time: moment().add(10,'seconds'), // change this to the default start time
                    active: 'LOGIN',
-                   checked: false,
                    token: ''};
 
     this.testTime = this.testTime.bind(this);
@@ -76,10 +75,11 @@ class WebView extends React.Component {
 
         {this.state.active === 'LOGIN' ? (
                     <Login nextView={this.updateView} setToken={this.setToken} />
+                    // <DashboardControl nextView={this.updateView} />
                 ) : this.state.active === 'DASHBOARDCONTROL' ? (
-                    <DashboardControl nextView={this.updateView} checked={this.checked} flip={this.flip} />
+                    <DashboardControl nextView={this.updateView} token={this.state.token} />
                 ) : this.state.active === 'DASHBOARDRYTHMIC' ? (
-                    <DashboardRythmic nextView={this.updateView} checked={this.checked} flip={this.flip} />
+                    <DashboardRythmic nextView={this.updateView} />
                 ) : null }
 
                 {/* <Login />  */}

@@ -9,7 +9,8 @@ class DashboardControl extends React.Component {
   render (){
     return(
         <div>
-        <PersonaToggle nextView={this.props.nextView} checked={this.props.checked} flip={this.props.flip}/>
+        {/* <PersonaToggle nextView={this.props.nextView} /> */}
+        <DashboardButtons />
 
         <p className="message-morning">Good morning! It's 8:45am.</p>
         <h1 className="message-to-user1">Your deep work starts at 10am.</h1>

@@ -28,18 +28,19 @@ class LoginForm extends React.Component {
     alert("A name was submitted: " + this.state.username + this.state.password);
     event.preventDefault();
 
-    fetch('http://127.0.0.1:8000', { 'contentType': 'application/json'}).then((response) => {
-        console.log(response);
-      })
+    // fetch('http://127.0.0.1:8000', { 'contentType': 'application/json'}).then((response) => {
+    //     console.log(response);
+    //   })
 
       var payload = {
         username: this.state.username,
         password: this.state.password
        };
 
-       axios.post("http://127.0.0.1:8000/api-token-auth/", payload)
+       axios.post("http://192.168.1.206:8000/api-token-auth/", payload)
         .then((res) => { this.props.setToken(res.data.token);
-                        this.props.nextView('DASHBOARDCONTROL')})
+                        console.log("something");
+                        this.props.nextView('DASHBOARDCONTROL') })
 
       //   var data = new FormData();
       //   data.append( "json", JSON.stringify( payload ) );
