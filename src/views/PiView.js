@@ -6,6 +6,7 @@ import GradientBackground from '../components/GradientBackground.js';
 import Websocket from 'react-websocket';
 import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import axios from "axios";
 
 class PiView extends React.Component {
 
@@ -33,6 +34,12 @@ class PiView extends React.Component {
     });
   }
 
+  listentick() {
+    axios.get("http://127.0.0.1:8000/sessions/")
+        .then((res) => { this.props.setToken(res.data.token); 
+                        this.props.nextView('DASHBOARDCONTROL')}) 
+  }
+
   // duration is the duration in seconds of the new deep work session
   startCounter(duration) {
     this.setState({
@@ -40,6 +47,14 @@ class PiView extends React.Component {
       speed: 10 / duration
     });
     this.timerID = setInterval(() => this.tick(), 100);
+  }
+
+  componentDidMount() {
+    this.socket = setInterval(() => this.listentick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.socket);
   }
 
   render() {

@@ -19,16 +19,18 @@ class WebView extends React.Component {
     super(props);
     this.state = { time: moment().add(10,'seconds'), // change this to the default start time
                    active: 'LOGIN',
-                   checked: false}; 
+                   checked: false, 
+                   token: ''}; 
   
     this.testTime = this.testTime.bind(this);
     this.updateView = this.updateView.bind(this);
     this.flip = this.flip.bind(this);
+    this.setToken = this.setToken.bind(this);
   }
 
  
     componentDidMount() {
-      fetch('http://172.20.10.9:8000', { 'contentType': 'application/json'}).then((response) => {
+      fetch('http://127.0.0.1:8000', { 'contentType': 'application/json'}).then((response) => {
         console.log(response);
       })
     }
@@ -69,17 +71,24 @@ class WebView extends React.Component {
     })
   }
 
+  setToken(tok) {
+    this.setState({
+      token: tok
+    })
+  }
+
+
   render() {
       this.testTime();
       return(
         <div className="web-app">
 
         {this.state.active === 'LOGIN' ? (
-                    <Login nextView={this.updateView} />
+                    <Login nextView={this.updateView} setToken={this.setToken} />
                 ) : this.state.active === 'DASHBOARDCONTROL' ? (
-                    <DashboardControl nextView={this.updateView} checked={this.isRythmic} flip={this.flip} /> 
+                    <DashboardControl nextView={this.updateView} checked={this.checked} flip={this.flip} /> 
                 ) : this.state.active === 'DASHBOARDRYTHMIC' ? (
-                  <DashboardRythmic nextView={this.updateView} checked={this.isRythmic} flip={this.flip} />                 
+                    <DashboardRythmic nextView={this.updateView} checked={this.checked} flip={this.flip} />                 
                 ) : null }
           
         <PoweredBy companyName="Zitcom" />

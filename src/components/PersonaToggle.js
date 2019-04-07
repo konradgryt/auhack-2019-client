@@ -10,9 +10,8 @@ class PersonaToggle extends Component {
  
   handleChange(checked) {
     this.setState({ checked });
-    this.props.flip();
 
-    // if (!checked) {
+    // if (checked) {
     //   this.props.nextView('DASHBOARDCONTROL'); 
     // } else {
     //   this.props.nextView('DASHBOARDRYTHMIC');
