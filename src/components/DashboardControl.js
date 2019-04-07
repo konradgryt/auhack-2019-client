@@ -12,8 +12,6 @@ class DashboardControl extends React.Component {
         <div>
         <PersonaToggle nextView={this.props.nextView} checked={this.props.checked} flip={this.props.flip}/>
 
-        <DashboardButtons />
-        
         </div>
     )
   }

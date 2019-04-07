@@ -170,10 +170,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 100%
 }
 
-.persona-container .heading{
+.heading{
   font-weight: bold;
   font-size: 32px;
-  text-align: center
+  text-align: center;
+  color: white
 }
 
 .web-app {
@@ -186,15 +187,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .toggle-container {
   padding: 15px;
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .toggle-name {
   padding: 20px;
-  margin: 0 auto;
 }
 
 .login-form {
@@ -387,4 +388,43 @@ input[type=submit] {
 
 .sidebar--info-container.swipe .sidebar--info-inside{
   transform: translateX(0%);
+}
+
+.triangle-buttons{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-switch-bg{
+  border-radius: 30px!important;
+  border: 4px solid white!important;
+  background: rgba(255,255,255,0.4)!important
+}
+
+.react-switch-handle{
+  top: 5px!important;
+  left: 4px!important;
+  background: #EA2356!important
+}
+
+.toggle-name{
+  font-weight: bold!important;
+  font-size: small!important
+}
+
+.toggle-container label{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%
+}
+
+.toggle-container label .toggle-name{
+  text-align: left;
 }
