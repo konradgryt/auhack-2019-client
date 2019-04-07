@@ -32,5 +32,4 @@ export class Api {
     return endpoints
 
   }
-
 }

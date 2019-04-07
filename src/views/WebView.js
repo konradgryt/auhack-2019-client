@@ -7,13 +7,14 @@ import { Api } from '../api.js';
 import Login from "../components/Login"
 import SideMenu from "./../components/SideMenu.js";
 
-const myApi = new Api({ url:'https://jsonplaceholder.typicode.com' })
+//const myApi = new Api({ url:'https://jsonplaceholder.typicode.com' })
 
 class WebView extends React.Component {
   
     componentDidMount() {
-      myApi.createEntity({ name: 'todos' })
-      myApi.endpoints.todos.get(1).then(({data}) => console.log(data))
+      fetch('http://172.20.10.9:8000', { 'contentType': 'application/json'}).then((response) => {
+        console.log(response);
+      })
     }
 
     render() {
